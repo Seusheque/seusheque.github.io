@@ -309,13 +309,15 @@
 
     .app {
         height: 100vh;
-        background: linear-gradient(45deg, #7958f2, #5b44c1) no-repeat;
+        background: linear-gradient(45deg,#1b0e24, #251233, #2e1640, #3c1b54, #4d206e, #55227a, #642691);
+        background-size: 600% 600%;
+        animation: animate 60s ease alternate infinite;
     }
 
     .text {
         text-align: center;
         color: #142f48;
-        font-size: 120%;
+        font-size: 110%;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         margin: 2%;
     }
@@ -336,9 +338,8 @@
 
     .app-border:before {
         content: "";
-        
         position: absolute;
-        background: linear-gradient(45deg, #c22ed0, #5ffae0);
+        background: linear-gradient(45deg, #c22ed0, #5ffae0) no-repeat;
         height: 120%;
         width: 120%;
         background-size: 300% 300%;
@@ -396,7 +397,7 @@
         color: #8D9094;
         font-size: 20px;
         font-family: 'Rubik', sans-serif;
-        font-weight: 500;
+        font-weight: 800;
     }
 
     .header { margin-right: 45px; }
@@ -413,31 +414,31 @@
         font-weight: 500;
     }
 
-    .header.total { margin-left: 40px; }
+    .header.total { margin-left: 10px; }
 
     .app-menu .menu-item {
         width: 100%;
         display: flex;
         flex-direction: row;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .menu-wrapp {
         background: #3e4146;
         border-radius: 10px;
-        margin: -15px;
-        margin-top: -5px;
-        padding-left: 15px;
-        padding-right: 15px;
+        margin: -1px;
+        margin-top: -1px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     .menu-content {
         box-sizing: border-box;
-        height: 460px;
+        height: 350px;
         overflow-y: scroll;        
     }
 
-    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar { width: 12px; }
 
     ::-webkit-scrollbar-track {
         background: #2c2e31;
@@ -541,26 +542,25 @@
         margin-top: 20px;
         width: 150px;
         height: 60px;
-        background: #5865F2;
+        background: linear-gradient(-45deg, #8a2da1, #692da1, #2d48a1, #2d76a1, #5865F2, #2d50a1) no-repeat;
+        background-size: 300% 300%;
+        animation: gradient 15s ease infinite;
         border-radius: 30px;
         left: calc(50% - 75px);
         color: #fff;
         font-size: 25px;
         font-family: 'Rubik', sans-serif;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 60px;
         text-align: center;
-        transition: box-shadow 0.3s;
+        transition: box-shadow 0.6s;
         box-shadow: 0 0 20px 10px #000000;
         box-shadow: 0 0 20px 10px rgba(0, 0, 0, .0);
     }
 
     .button-generate:hover {
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #5865F2, #23d5ab);
-        background-size: 400% 400%;
         box-shadow: 0 0 20px 10px #000000;
         box-shadow: 0 0 20px 10px rgba(0, 0, 0, .4);
-        animation: gradient 5s ease infinite;
     }
 
     @keyframes gradient {
@@ -638,20 +638,6 @@
     .app-result.active {
         visibility: visible;
         opacity: 1;
-    }
-
-    .bunny {
-        position: fixed;
-        top: 55%;
-        left: 70%
-    }
-
-    .bot {
-        z-index: 1;
-        position: fixed;
-        top: 30%;
-        left: 15%;
-        transform: rotate(-35deg);
     }
 
     .text1 {
@@ -946,7 +932,7 @@
             <div id="app-result" class="app-result">
             </div>
             <button  id="button-generate"class="button-generate" onclick="Generate()">
-              Generate!
+              Generate
             </button>
           </div>
           <div id="notification" class="notification">
@@ -965,18 +951,5 @@
         </div> 
       </div>
       </div>
-      <div class="bot">
-        <svg width="160" height="168" viewBox="0 0 160 168" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="16.5" y="34.5" width="127" height="131" rx="20.5" fill="#7FD6C2" stroke="#383A48" stroke-width="5"/>
-            <path d="M143.5 76.5H150C154.142 76.5 157.5 79.8579 157.5 84V116C157.5 120.142 154.142 123.5 150 123.5H143.5V76.5Z" fill="#E0719E" stroke="#383A48" stroke-width="5"/>
-            <path d="M16.5 76.5H10C5.85786 76.5 2.5 79.8579 2.5 84V116C2.5 120.142 5.85787 123.5 10 123.5H16.5V76.5Z" fill="#E0719E" stroke="#383A48" stroke-width="5"/>
-            <path d="M81 2.5H82C91.665 2.5 99.5 10.335 99.5 20V34.5H63.5V20C63.5 10.335 71.335 2.5 81 2.5Z" fill="#E0719E" stroke="#383A48" stroke-width="5"/>
-            <circle cx="49.5" cy="79.5" r="15" fill="#F3F6E6" stroke="#383A48" stroke-width="5"/>
-            <circle cx="110.5" cy="79.5" r="15" fill="#F3F6E6" stroke="#383A48" stroke-width="5"/>
-            <path d="M79.4539 92.9449L90.3522 116.54C90.5052 116.872 90.2632 117.25 89.8983 117.25H68.1017C67.7368 117.25 67.4948 116.872 67.6478 116.54L78.5461 92.9449C78.7249 92.5578 79.2751 92.5578 79.4539 92.9449Z" fill="#E0719E" stroke="#383A48" stroke-width="5"/>
-            <rect x="47.5" y="128.5" width="63" height="20" rx="10" fill="#F3F6E6" stroke="#383A48" stroke-width="5"/>
-            <path d="M95.5 128.5L95.5 147.5M80 128.5L80 147.5M64 128.5L64 147.5" stroke="#383A48" stroke-width="5"/>
-            </svg>
-    </div>
-  </body>
+</body>
 </html>
